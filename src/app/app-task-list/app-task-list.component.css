@@ -1,0 +1,15 @@
+h1 {
+    color: blue;
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin: 5px 0;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+  }
