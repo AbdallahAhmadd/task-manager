@@ -1,11 +1,11 @@
 <mat-card>
   <mat-card-content>
     <h1>Task List</h1>
-    <div *ngIf="tasks$().length === 0">
+    <div *ngIf="(tasks$ | async)?.length === 0">
       <p>No tasks available. Add a task to get started!</p>
     </div>
 
-    <div *ngFor="let task of tasks$()" class="task-item">
+    <div *ngFor="let task of (tasks$ | async)" class="task-item">
       <div style="display: flex; justify-content: space-between; align-items: center;">
         <h3>{{ task.title }}</h3>
         <button mat-icon-button aria-label="Delete task" (click)="task._id ? deleteTask(task._id) : null">
