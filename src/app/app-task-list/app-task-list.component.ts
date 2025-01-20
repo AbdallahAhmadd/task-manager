@@ -6,6 +6,7 @@ import { TaskService } from '../task.service';
 import { Task } from '../../../../server/src/utils';
 import { signal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
 
 
 @Component({
@@ -13,7 +14,7 @@ import { MatIconModule } from '@angular/material/icon';
   templateUrl: './app-task-list.component.html',
   styleUrl: './app-task-list.component.css',
   standalone: true,
-  imports: [NgIf, NgFor, MatButtonModule, MatCardModule, MatIconModule]
+  imports: [CommonModule,NgIf, NgFor, MatButtonModule, MatCardModule, MatIconModule]
 })
 export class AppTaskListComponent implements OnInit {
   tasks$;
