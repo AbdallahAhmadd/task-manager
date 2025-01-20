@@ -1,20 +1,21 @@
 <mat-card>
-  <mat-card-title>Task List</mat-card-title>
   <mat-card-content>
+    <h1>Task List</h1>
     <div *ngIf="tasks$().length === 0">
       <p>No tasks available. Add a task to get started!</p>
     </div>
 
-    <div *ngFor="let task of tasks$() " class="task-item">
-      <h3>{{ task.title }}</h3>
+    <div *ngFor="let task of tasks$()" class="task-item">
+      <div style="display: flex; justify-content: space-between; align-items: center;">
+        <h3>{{ task.title }}</h3>
+        <button mat-icon-button aria-label="Delete task" (click)="task._id ? deleteTask(task._id) : null">
+          <mat-icon>delete</mat-icon>
+        </button>
+      </div>
       <p>{{ task.description }}</p>
       <p>Progress: {{ task.progress }}%</p>
       <p>Priority: {{ task.priority }}</p>
       <hr />
     </div>
   </mat-card-content>
-
- 
 </mat-card>
-
-
